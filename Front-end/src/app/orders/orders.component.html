@@ -1,0 +1,30 @@
+<h2 style="text-align: center;">Active orders:</h2>
+<div class="card card-body">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Sum</th>
+        <th scope="col">City</th>
+        <th scope="col">Street</th>
+        <th scope="col">Address</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let order of orders;" routerLink="/admin/orders/{{ order.id }}">
+        <th scope="row">{{ order.id }}</th>
+        <td>{{order.fname}}</td>
+        <td>{{order.lname}}</td>
+        <td>${{order.sum}}</td>
+        <td>{{order.city}}</td>
+        <td>{{order.street}}</td>
+        <td>{{order.address}}</td>
+        <td><b>Delete order</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

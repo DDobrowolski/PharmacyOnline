@@ -1,0 +1,61 @@
+
+
+<div class="order">
+    <button id="orderButton" class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#order" aria-expanded="false" aria-controls="order">
+        Your order: ${{ orderSum.toFixed(2) }}
+      </button>
+  <div class="collapse" id="order">
+      <div class="card card-body">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of orderItems;">
+                  <th scope="row">{{ item.name }}</th>
+                  <td>{{ item.price }}</td>
+                  <td>{{ item.quant }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+  </div>
+<div class="data">
+    <form role="form" (ngSubmit)="buy()">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" [(ngModel)]="order.fname" name="fname">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" [(ngModel)]="order.lname" name="lname">
+          </div>
+          <div class="col">
+              <input type="tel" class="form-control" placeholder="Phone" [(ngModel)]="order.phone" name="phone">
+            </div>
+        </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="City" [(ngModel)]="order.city" name="city">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Street" [(ngModel)]="order.street" name="street">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Address" [(ngModel)]="order.address" name="address">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Order comment" [(ngModel)]="order.com"  name="comments">
+            </div>
+          </div>
+
+          <button class="btn btn-outline-primary"  type="submit">Buy</button>
+      </form>
+
+</div>
+</div>

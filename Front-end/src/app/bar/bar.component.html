@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<div class="header">
+  <ul>
+    <li><h1><a routerLink="/" >Pharmacy online</a></h1></li>
+    <div *ngIf="authService.isLogged" class="ifLogged">
+      <li><img class = "logout" src= "{{ logoutImage }}" align="middle" title="Logout" (click)="logOut()"></li>
+    </div>
+
+    <div *ngIf="!authService.isLogged" class="ifNotLogged">
+        <li><a routerLink="signup" ><img class = "newAcc" src= "{{ newAccImage }}" align="middle" title="Sign up"></a></li>
+        <li><a routerLink="login"><img class = "logIn" src= "{{ logInImage }}" align="middle" title="Log in"></a></li>
+    </div>
+      <div class="copyright"><i>Created by DDobrowolski</i></div>
+</ul>
+
+
+</div>
+
+

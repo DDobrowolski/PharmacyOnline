@@ -1,0 +1,78 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-columns: repeat(6, 250px);
+    grid-template-rows: 250px 250px 250px;
+    grid-gap: 10px;
+
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 10px;
+  }
+.grid-item {
+  width: 200px;
+  border: 10px;
+  text-align: center;
+
+}
+.itemAv {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+
+
+.oneCartItem{
+margin-bottom: 25px;
+list-style: none;
+}
+
+
+#menu {
+  background-color: lightgray;
+  position: fixed;
+}
+
+.removeItemButton {
+  cursor: pointer;
+
+}
+.avatar {
+  margin-right: 5px;
+}
+
+.nameCart {
+  text-align: center;
+  font-size: 120%;
+  color: rgb(100, 97, 97);
+
+}
+
+.priceCart {
+  margin-right: 10px;
+}
+
+.quantCart{
+  margin-right: 10px;
+}
+
+.input-group-prepend{
+  text-align: center;
+}
+.menuContainer{
+  position: absolute;
+  right: 0;
+}
