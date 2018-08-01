@@ -47,8 +47,9 @@ import com.damek.pharmacy.repository.UserRepository;
             .and()
             .csrf().disable()
                 .authorizeRequests()
-                    .antMatchers("/index.html", "/", "/login", "/products", "/users").permitAll()
-                    .antMatchers("/user").authenticated();
+                    .antMatchers("/index.html", "/", "/login","/users").permitAll()
+                    .antMatchers("/user", "/buy").authenticated()
+            		.antMatchers("/admin/**").hasRole("ADMIN");
             // @formatter:on
         }
     

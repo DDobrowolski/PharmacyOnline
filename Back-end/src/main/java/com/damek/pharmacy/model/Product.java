@@ -3,8 +3,9 @@ package com.damek.pharmacy.model;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.DecimalMin;
 
 import lombok.Data;
@@ -13,6 +14,7 @@ import lombok.Data;
 @Entity
 public class Product {	
 	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String description;
@@ -25,8 +27,7 @@ public class Product {
 
 	
 	public Product() {}
-	public Product(Long id, String name, String description, BigDecimal price, String url) {
-		this.id = id;
+	public Product(String name, String description, BigDecimal price, String url) {
 		this.name = name;
 		this.description = description;
 		this.price = price;
