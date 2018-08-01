@@ -3,10 +3,10 @@ E-commerce app with users login/register, making orders etc.
 
 Technologies:
 
-Backend: Spring (Boot, Security, JPA, mySQL)
+Backend: Spring (Boot, Security, JPA, mySQL) <br />
 Frontend: Angular 6, Bootstrap, jQuery
 
-Features: 
+Features: <br />
 
 User authentitacion
 ![alt text](https://image.ibb.co/hC92qe/signin.png)
