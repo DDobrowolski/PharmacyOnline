@@ -11,10 +11,9 @@ orders: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.orders = this.http.get("orders");
+    this.http.get("orders")
+    .subscribe((orders) => {this.orders = orders;});
   }
 
-  goToDetail(){
-    alert("test");
-  }
+
 }

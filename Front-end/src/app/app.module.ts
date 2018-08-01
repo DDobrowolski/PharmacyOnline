@@ -17,6 +17,8 @@ import { UrlPermission } from './urlPermission/url.perm';
 import { BuyComponent } from './buy/buy.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersDetailComponent } from './orders-detail/orders-detail.component';
+import { ItemsManageComponent } from './items-manage/items-manage.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 
 @Injectable()
@@ -39,7 +41,9 @@ export class XhrInterceptor implements HttpInterceptor {
     SignupComponent,
     BuyComponent,
     OrdersComponent,
-    OrdersDetailComponent
+    OrdersDetailComponent,
+    ItemsManageComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,

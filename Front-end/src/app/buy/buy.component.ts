@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BuyService } from '../services/buy.service';
 import { Router } from '../../../node_modules/@angular/router';
 import { Order } from '../model/model.order';
-import { OrderItem } from '../model/model.orderItem';
+
 
 @Component({
   selector: 'app-buy',
@@ -21,12 +21,13 @@ export class BuyComponent implements OnInit {
     this.orderSum = JSON.parse(localStorage.getItem("cartSum"));
     this.order.items = this.orderItems;
     this.order.sum = this.orderSum;
-    console.log(this.order.items);
   }
 
 
   buy(){
     this.buyService.buy(this.order).subscribe(data =>{
+    localStorage.removeItem("cart");
+    localStorage.removeItem("cartSum");
     this.router.navigate(["/"]);
   });
 }

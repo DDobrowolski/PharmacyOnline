@@ -14,14 +14,14 @@
     </thead>
     <tbody>
       <tr >
-        <th scope="row">1</th>
-        <td>Bob</td>
-        <td>Marley</td>
-        <td>100$</td>
-        <td>Waszyngton</td>
-        <td>Test 2St.</td>
-        <td>T22</td>
-        <td><b>Delete order</b></td>
+        <th scope="row">{{ order$.id }}</th>
+        <td>{{ order$.fname }}</td>
+        <td>{{ order$.lname }}</td>
+        <td>{{ order$.sum }}</td>
+        <td>{{ order$.city }}</td>
+        <td>{{ order$.street }}</td>
+        <td>{{ order$.address }}</td>
+        <td ><button (click)="deleteOrder(order$.id);" class="btn btn-outline-primary">Delete order</button></td>
       </tr>
     </tbody>
   </table>
@@ -37,12 +37,12 @@
           <th scope="col">Quantity</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">11</th>
-          <td>Aspirynka</td>
-          <td>100$</td>
-          <td>10</td>
+      <tbody *ngIf="order$">
+        <tr *ngFor="let product of order$.items;">
+          <th scope="row">{{ product.id }}</th>
+          <td>{{ product.name }}</td>
+          <td>${{ product.price }}</td>
+          <td>{{ product.quant }}</td>
         </tr>
       </tbody>
     </table>

@@ -6,6 +6,8 @@ import { SignupComponent } from './signup/signup.component';
 import { BuyComponent } from './buy/buy.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersDetailComponent } from './orders-detail/orders-detail.component';
+import { ItemsManageComponent } from './items-manage/items-manage.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 const routes: Routes = [
   {path: '', component:ItemsComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'buy', component:BuyComponent},
   {path: 'admin/orders', component:OrdersComponent},
-  {path: 'admin/orders/1', component:OrdersDetailComponent}
+  {path: 'admin/orders/:id', component:OrdersDetailComponent},
+  {path: 'admin/items', component:ItemsManageComponent},
+  {path: 'admin/items/add', component:AddItemComponent}
 ];
 
 @NgModule({

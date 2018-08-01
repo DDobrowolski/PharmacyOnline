@@ -76,3 +76,9 @@ list-style: none;
   position: absolute;
   right: 0;
 }
+
+.btnContainer {
+  align-items: center;
+  margin-right: auto; margin-left: auto; 
+  text-align: center;
+}

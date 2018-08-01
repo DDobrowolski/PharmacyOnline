@@ -3,11 +3,11 @@
 
 
 
-<div class="grid-container"> <!--  items  -->
+<div id = "shopItems" class="grid-container"> <!--  items  -->
     <div *ngFor="let item of items;" class="grid-item" >
       <img class="itemAv" src="{{item.imgUrl}}" width="100px" height="100px">
       <p>{{item.name}}</p>
-      <p>${{item.price}}</p>
+      <p>${{item.price.toFixed(2)}}</p>
       <p>{{item.description}}</p>
       <div class="buyContainer">
           <div class="input-group mb-3">
@@ -27,22 +27,25 @@
  <div class="menuContainer" style="width: 13%;">
       <div id ="menu" class="w3-sidebar w3-bar-block w3-card" style="width:13%;right:0;">
         <h3 class="w3-bar-item">Sort</h3>
-        <a href="#" class="w3-bar-item w3-button">Price</a>
-        <a href="#" class="w3-bar-item w3-button">Name</a>
+        <a (click)="sortByPrice()" class="w3-bar-item w3-button">Price</a>
+        <a (click)="sortByName()" class="w3-bar-item w3-button">Name</a>
         <div *ngIf="authService.isLogged"  class="cartItemsh">   
           <h3 class="w3-bar-item">Your cart: <b>${{ cartSum.toFixed(2) }}</b></h3>   
-          <div  *ngFor="let item of cartItems"  class="cart"> 
+          <div  class="cart"> 
             <ul class="w3-bar-item" id="cartItems">
-                  <div class="oneCartItem">
+                  <div  *ngFor="let item of cartItems" class="oneCartItem">
                       <li class="liItem">
                         <div class="nameCart">{{ item.name }}</div>
                         <span class="avatar"><img src="{{ item.imgurl }}" width="64px" height="64px"></span>
-                        <span class="priceCart"><b> ${{ item.price }}</b></span>
+                        <span class="priceCart"><b> ${{ item.price.toFixed(2) }}</b></span>
                         <span class="quantCart">{{ item.quant }}</span>
                         <span class="removeItem"><img class="removeItemButton" src="{{ removeImage }}" title="Click to remove item" (click)="deleteFromCart(item.name)"></span>
                        </li>
                     </div>
             </ul>
+            <div class="btnContainer">
+            <button id="placeOrderBtn" *ngIf="cartItems.length>0" class="btn btn-secondary" routerLink="/buy">Place an order</button>
+          </div>
         </div>
        </div>
       </div>

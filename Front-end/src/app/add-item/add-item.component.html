@@ -1,0 +1,22 @@
+<h3>Add an item</h3>
+
+<div class="data">
+  <form role="form" (ngSubmit)="addItem()">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="item.name" name="name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Description" [(ngModel)]="item.description" name="description">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Price" [(ngModel)]="item.price" name="price">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Img-url" [(ngModel)]="item.imgUrl" name="imgurl">
+          </div>
+      </div>
+
+        <button class="btn btn-outline-primary"  type="submit">Add item</button>
+    </form>
+    </div>

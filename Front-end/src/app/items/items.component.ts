@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 import { User } from '../model/model.user';
 import { CartItem } from '../model/model.cartItem';
+import * as $ from 'jquery';
+import { delay } from '../../../node_modules/rxjs/operators';
 
 @Component({
   selector: 'items',
@@ -85,4 +87,31 @@ deleteFromCart(name: string){
 }
 
 
+ compareName(a,b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+}
+
+comparePrice(a,b) {
+  if (a.price < b.price)
+    return -1;
+  if (a.price > b.price)
+    return 1;
+  return 0;
+}
+
+sortByName(){
+  $("#shopItems").hide();
+  $("#shopItems").stop().show("slow");
+  this.items.sort(this.compareName);
+}
+
+sortByPrice(){
+  $("#shopItems").hide();
+  $("#shopItems").stop().show("slow");
+  this.items.sort(this.comparePrice);
+}
 }
