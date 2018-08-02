@@ -30,15 +30,11 @@ public class OrderController {
 	@RequestMapping(method=RequestMethod.POST, value="/orders")
 	public void addOrder(@RequestBody Order order) {
 		orderService.addOrder(order);
-		
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/orders/{id}")
 	public void updateOrder(@RequestBody Order order, @PathVariable Long id) {
 		orderService.updateOrder(id, order);
-		
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/orders/{id}")
