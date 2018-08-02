@@ -1,5 +1,5 @@
 # PharmacyOnline
-E-commerce app with users login/register, making orders etc.
+E-commerce app with users login/register, placing orders etc.
 
 Technologies:
 
