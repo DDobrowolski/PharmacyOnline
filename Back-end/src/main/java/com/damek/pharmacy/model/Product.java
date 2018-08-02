@@ -24,8 +24,6 @@ public class Product {
     private int quantity;
 
     
-
-	
 	public Product() {}
 	public Product(String name, String description, BigDecimal price, String url) {
 		this.name = name;
@@ -35,6 +33,4 @@ public class Product {
 		this.quantity = 1;
 		
 	}
-	
-
 }
