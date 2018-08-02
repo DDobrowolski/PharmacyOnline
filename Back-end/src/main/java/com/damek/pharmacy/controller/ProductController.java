@@ -32,15 +32,11 @@ public class ProductController {
 	@RequestMapping(method=RequestMethod.POST, value="/products")
 	public void addProduct(@RequestBody Product product) {
 		productService.addProduct(product);
-		
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/products/{id}")
 	public void updateProduct(@RequestBody Product product, @PathVariable Long id) {
 		productService.updateProduct(id, product);
-		
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/products/{id}")
