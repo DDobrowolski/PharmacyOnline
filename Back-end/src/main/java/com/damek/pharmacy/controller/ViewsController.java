@@ -17,7 +17,4 @@ public class ViewsController {
     public String index() {
         return "forward:/index.html";
     }
-    
-    
-
 }
