@@ -8,7 +8,7 @@ Frontend: Angular 6, Bootstrap, jQuery
 
 Features: <br />
 
-User authentitacion
+User authentication
 ![alt text](https://image.ibb.co/hC92qe/signin.png)
 
 Placing orders
