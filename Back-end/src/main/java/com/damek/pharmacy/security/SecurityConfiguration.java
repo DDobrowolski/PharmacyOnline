@@ -52,11 +52,6 @@ import com.damek.pharmacy.repository.UserRepository;
             		.antMatchers("/admin/**").hasRole("ADMIN");
             // @formatter:on
         }
-    
-
-
-    	 
-
     }
 	  
 
