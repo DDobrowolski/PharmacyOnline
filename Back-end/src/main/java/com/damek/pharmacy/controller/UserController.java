@@ -47,14 +47,11 @@ public class UserController {
 		newUser.setRole("USER");
 		newUser.setPasswordEncrypted(passwordEncoder.encode(newUser.getPassword()));
 		return new ResponseEntity<User>(userService.save(newUser), HttpStatus.CREATED);
-
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/users/{id}")
 	public void updateUser(@RequestBody User user, @PathVariable Long id) {
 		userService.updateUser(id, user);
-		
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/users/{id}")
@@ -67,10 +64,5 @@ public class UserController {
 		logger.info("user logged "+principal);
 		return principal;
 	}
-    
-
-
-    
-    
 }
 	
