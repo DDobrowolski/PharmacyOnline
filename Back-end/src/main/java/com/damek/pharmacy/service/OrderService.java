@@ -24,23 +24,18 @@ public class OrderService {
 	
 	public Order getOrder(Long id) {
 		return orderRepository.findById(id).orElse(null);
-		
 	}
 
 	public void addOrder(Order order) {
 		orderRepository.save(order);
-
-		
 	}
 
 	public void updateOrder(Long id, Order order) {
 		orderRepository.save(order);
-		
 	}
 
 	public void deleteOrder(Long id) {
 		orderRepository.deleteById(id);
-
 	}
 	
 }
