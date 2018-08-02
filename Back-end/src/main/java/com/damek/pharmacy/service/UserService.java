@@ -12,10 +12,9 @@ import com.damek.pharmacy.repository.UserRepository;
 
 @Service
 public class UserService {
+	
 	@Autowired
 	private UserRepository userRepository;
-
-	
 
 	public List<User> getAllUsers(){
 		List<User> users = new ArrayList<>();
@@ -24,25 +23,19 @@ public class UserService {
 	}
 	
 	public User getUser(Long id) {
-		return userRepository.findById(id).orElse(null);
-		
+		return userRepository.findById(id).orElse(null);	
 	}
 
 	public void addUser(User user) {
-		userRepository.save(user);
-
-
-		
+		userRepository.save(user);	
 	}
 
 	public void updateUser(Long id, User user) {
 		userRepository.save(user);
-		
 	}
 
 	public void deleteUser(Long id) {
 		userRepository.deleteById(id);
-
 	}
 	
 	public User find(String username) {
@@ -52,6 +45,4 @@ public class UserService {
 	public User save(User user) {
 		return userRepository.saveAndFlush(user);
 	}
-	
-	
 }
