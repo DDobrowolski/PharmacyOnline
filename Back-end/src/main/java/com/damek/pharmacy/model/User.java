@@ -34,7 +34,7 @@ public class User implements UserDetails {
 	private String password;
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String email;
-    private String  role;
+   	private String  role;
 	private String passwordEncrypted;
 	
 	public User() {}
