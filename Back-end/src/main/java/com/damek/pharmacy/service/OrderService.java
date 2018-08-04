@@ -14,7 +14,7 @@ import com.damek.pharmacy.repository.OrderRepository;
 public class OrderService {
 
 	@Autowired
-	OrderRepository orderRepository;
+	private OrderRepository orderRepository;
 	
 	public List<Order> getAllOrders(){
 		List<Order> orders = new ArrayList<>();
