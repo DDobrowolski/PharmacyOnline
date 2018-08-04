@@ -18,10 +18,10 @@ public class Product {
 	private Long id;
 	private String name;
 	private String description;
-    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
+    	@DecimalMin(value = "0.00", message = "*Price has to be non negative number")
 	private BigDecimal price;
-    private String imgUrl;
-    private int quantity;
+   	private String imgUrl;
+   	private int quantity;
 
     
 	public Product() {}
