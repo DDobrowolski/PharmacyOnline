@@ -25,7 +25,6 @@ export class AuthService {
             let logged = this.isLogged.toString();
             localStorage.setItem("isLogged", logged);
         } else {
-            console.log("nie");
             this.isLogged = false;
         }
         return callback && callback();
